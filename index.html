@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giving is Hot — A Paris Hilton Mother's Day Campaign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FBF5F0;
+  --cream-2: #F5EAE0;
+  --cream-3: #EFDFD2;
+  --white: #FFFFFF;
+  --pink-50: #FDEEF2;
+  --pink-100: #FBDCE4;
+  --pink-200: #F4BBC8;
+  --pink-400: #E884A0;
+  --pink-600: #E04A7D;
+  --pink-700: #C53366;
+  --pink-800: #8F1F47;
+  --burgundy: #2B1221;
+  --text: #3A1E2F;
+  --text-soft: #6B4A5A;
+  --text-muted: #9C7F8C;
+  --gold: #C9A46B;
+  --border: rgba(43, 18, 33, 0.1);
+  --border-strong: rgba(43, 18, 33, 0.18);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Instrument Sans', -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.serif { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
+.italic { font-style: italic; }
+
+/* Subtle grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2' seed='4'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.35'/></svg>");
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(251, 245, 240, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: var(--burgundy);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--pink-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Instrument Sans', sans-serif;
+  letter-spacing: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--pink-600); }
+
+.nav-cta {
+  background: var(--burgundy);
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.nav-cta:hover { background: var(--pink-600); transform: translateY(-1px); }
+
+@media (max-width: 768px) {
+  .nav-links { gap: 16px; }
+  .nav-links a:not(.nav-cta) { display: none; }
+}
+
+/* HERO */
+.hero {
+  padding: 120px 0 140px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pink-700);
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pink-600);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+h1.hero-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: clamp(44px, 6vw, 80px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  color: var(--burgundy);
+  margin-bottom: 32px;
+  font-variation-settings: "SOFT" 100, "WONK" 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+h1.hero-title em {
+  font-style: italic;
+  font-weight: 300;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+  color: var(--pink-700);
+}
+
+.hero-sub {
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  max-width: 620px;
+  margin: 0 auto 44px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-deadline {
+  margin-top: 28px;
+  font-size: 13px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 30px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--pink-600);
+  color: white;
+  box-shadow: 0 2px 0 0 var(--pink-800);
+}
+
+.btn-primary:hover { background: var(--pink-700); transform: translateY(-1px); box-shadow: 0 3px 0 0 var(--pink-800); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--burgundy);
+  border: 1px solid var(--burgundy);
+}
+
+.btn-secondary:hover { background: var(--burgundy); color: white; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--burgundy);
+  padding: 16px 8px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+.btn-ghost:hover { color: var(--pink-600); }
+
+/* Hero visual */
+.hero-visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  max-width: 480px;
+  margin-left: auto;
+}
+
+.hero-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(145deg, var(--pink-100) 0%, var(--pink-200) 60%, var(--pink-400) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-card svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-card-label {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(43, 18, 33, 0.88);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.hero-card-label .serif {
+  font-size: 17px;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.hero-card-label .muted { color: rgba(255,255,255,0.7); }
+
+.hero-sticker {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 110px;
+  height: 110px;
+  background: var(--cream);
+  border: 1.5px solid var(--burgundy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.15;
+  color: var(--burgundy);
+  padding: 12px;
+  z-index: 3;
+  animation: slowSpin 28s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes slowSpin {
+  to { transform: rotate(360deg); }
+}
+
+.hero-sticker-inner {
+  display: block;
+  animation: counterSpin 28s linear infinite;
+}
+
+@keyframes counterSpin {
+  to { transform: rotate(-360deg); }
+}
+
+.hero-sticker-star {
+  display: block;
+  margin: 0 auto 2px;
+  color: var(--pink-600);
+}
+
+@media (max-width: 900px) {
+  .hero { padding: 72px 0 80px; }
+}
+
+/* DECORATIVE DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 40px 0;
+  color: var(--pink-600);
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-strong), transparent);
+}
+
+.divider-star {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* WHY */
+.why-section {
+  padding: 40px 0 80px;
+  position: relative;
+}
+
+.why-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.why-header {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pink-700);
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+.pullquote {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: clamp(28px, 3.8vw, 46px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--burgundy);
+  margin-bottom: 32px;
+}
+
+.pullquote em { color: var(--pink-700); font-style: italic; }
+
+.pullquote-attribution {
+  font-size: 13px;
+  color: var(--text-soft);
+  letter-spacing: 0.04em;
+}
+
+.pullquote-attribution strong { color: var(--burgundy); font-weight: 500; }
+
+/* STORIES */
+.stories-section {
+  padding: 80px 0 100px;
+  background: var(--cream-2);
+  border-radius: 0;
+  margin: 40px 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+
+.section-kicker {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pink-700);
+  font-weight: 500;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.section-kicker::before, .section-kicker::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--pink-400);
+}
+
+h2.section-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: clamp(34px, 4.5vw, 54px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--burgundy);
+  margin-bottom: 20px;
+}
+
+h2.section-title em { font-style: italic; color: var(--pink-700); }
+
+.section-sub {
+  font-size: 17px;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.story-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 32px 28px;
+  border: 0.5px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -20px rgba(43, 18, 33, 0.15);
+}
+
+.story-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  color: var(--burgundy);
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.story-avatar-1 { background: var(--pink-100); }
+.story-avatar-2 { background: #F2E4D0; }
+.story-avatar-3 { background: #E8DCD6; }
+
+.story-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+
+.story-meta strong { color: var(--burgundy); font-weight: 500; }
+
+.story-body {
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--burgundy);
+  font-weight: 350;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.story-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--pink-50);
+  color: var(--pink-700);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  width: fit-content;
+}
+
+.story-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--pink-600);
+  border-radius: 50%;
+}
+
+.stories-footer {
+  text-align: center;
+  margin-top: 48px;
+  font-size: 14px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .stories-grid { grid-template-columns: 1fr; }
+}
+
+/* APPLY */
+.apply-section {
+  background: var(--cream-2);
+  padding: 100px 0;
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.apply-intro {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.apply-intro .section-title { font-size: clamp(32px, 4vw, 48px); }
+
+.apply-intro-lead {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--text-soft);
+  font-weight: 350;
+  margin-top: 20px;
+}
+
+.apply-intro-lead em { font-style: italic; color: var(--pink-700); font-weight: 400; }
+
+.apply-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 48px;
+}
+
+.apply-step {
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  position: relative;
+}
+
+.apply-step-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 44px;
+  font-weight: 300;
+  color: var(--pink-400);
+  line-height: 0.8;
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+}
+
+.apply-step h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--burgundy);
+  margin-bottom: 12px;
+}
+
+.apply-step ul {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.apply-step li {
+  font-size: 14px;
+  padding: 8px 0;
+  color: var(--text-soft);
+  line-height: 1.5;
+  padding-left: 20px;
+  position: relative;
+}
+
+.apply-step li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 10px;
+  height: 1px;
+  background: var(--pink-400);
+}
+
+.apply-step-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+  padding-top: 12px;
+  border-top: 0.5px solid var(--border);
+  margin-top: 12px;
+}
+
+.apply-cta {
+  text-align: center;
+}
+
+.apply-cta-help {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.apply-cta-help a { color: var(--pink-700); text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 900px) { .apply-steps { grid-template-columns: 1fr; } }
+
+/* TRUST */
+.trust-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.trust-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  opacity: 0.7;
+}
+
+.trust-logo {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  color: var(--text-soft);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.trust-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border-strong);
+}
+
+.trust-note {
+  margin-top: 48px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* FAQ */
+.faq-section {
+  padding: 100px 0;
+  background: var(--cream-2);
+}
+
+.faq-wrap { max-width: 820px; margin: 0 auto; }
+
+.faq-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 40px;
+  background: var(--white);
+  padding: 6px;
+  border-radius: 999px;
+  border: 0.5px solid var(--border);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.faq-tab {
+  background: transparent;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: color 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.faq-tab.active { color: var(--white); }
+
+.faq-tab-pill {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  background: var(--burgundy);
+  border-radius: 999px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s;
+  z-index: 1;
+}
+
+.faq-list {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-list.active { display: flex; }
+
+.faq-item {
+  background: var(--white);
+  border-radius: 12px;
+  border: 0.5px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.faq-item[open] { border-color: var(--pink-400); }
+
+.faq-item summary {
+  padding: 22px 28px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--burgundy);
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  transition: background 0.2s;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid var(--burgundy);
+  border-bottom: 1px solid var(--burgundy);
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-item[open] summary::after { transform: rotate(-135deg); }
+
+.faq-item summary:hover { background: var(--pink-50); }
+
+.faq-body {
+  padding: 0 28px 24px;
+  color: var(--text-soft);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.faq-body a { color: var(--pink-700); }
+
+/* FOOTER */
+footer {
+  background: var(--burgundy);
+  color: rgba(251, 245, 240, 0.7);
+  padding: 64px 0 32px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.footer-brand em { font-style: italic; color: var(--pink-400); }
+
+.footer-addr {
+  font-size: 13px;
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+.footer-col h5 {
+  color: var(--cream);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+.footer-col a {
+  display: block;
+  color: rgba(251, 245, 240, 0.65);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 5px 0;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover { color: var(--pink-200); }
+
+.footer-bottom {
+  border-top: 0.5px solid rgba(251, 245, 240, 0.15);
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-social { display: flex; gap: 12px; }
+
+.footer-social a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(251, 245, 240, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(251, 245, 240, 0.7);
+  transition: all 0.2s;
+}
+
+.footer-social a:hover { border-color: var(--pink-400); color: var(--pink-200); }
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+/* Reveal animations */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* Sticker helper */
+.starburst {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><span class="nav-logo-mark">★</span>Giving is Hot</a>
+    <div class="nav-links">
+      <a href="#why">About</a>
+      <a href="#apply">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#apply" class="nav-cta">Apply now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        Paris Hilton × Standard Giving Co.
+      </div>
+      <h1 class="hero-title">For the moms <em>holding it&nbsp;all.</em></h1>
+      <p class="hero-sub">This Mother's Day, Paris is giving direct financial support to mothers navigating real hardship. If you're a mom who could use some love, we want to hear from you.</p>
+      <div class="hero-ctas">
+        <a href="#apply" class="btn btn-primary">
+          Apply for support
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <p class="hero-deadline">Applications reviewed through Mother's Day · Sunday, May 10</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-section" id="why">
+  <div class="container">
+    <div class="divider">
+      <div class="divider-line"></div>
+      <svg class="divider-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="why-inner">
+      <div class="why-header">Why this, why now</div>
+      <p class="pullquote">Because no mom should carry it alone. Mothers are stretched thin — financially, emotionally, every day. Some are one bill away from breaking. This Mother's Day, we're showing up for <em>them.</em></p>
+      <p class="pullquote-attribution">A <strong>Paris Hilton</strong> campaign, in partnership with <strong>Standard Giving Co.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="apply-section" id="apply">
+  <div class="container">
+    <div class="apply-intro">
+      <div class="section-kicker">For moms who need support</div>
+      <h2 class="section-title">To every mother feeling stretched too thin — <em>we see you.</em></h2>
+      <p class="apply-intro-lead">If you're navigating real financial hardship and could use some love, apply below. We review every story with care.</p>
+    </div>
+
+    <div class="apply-steps">
+      <div class="apply-step">
+        <div class="apply-step-num">01</div>
+        <h4>Check eligibility</h4>
+        <ul>
+          <li>U.S. resident, 18 or older</li>
+          <li>A mother or primary caregiver</li>
+          <li>Currently navigating financial hardship</li>
+        </ul>
+      </div>
+
+      <div class="apply-step">
+        <div class="apply-step-num">02</div>
+        <h4>Verify your situation</h4>
+        <ul>
+          <li>Share your name, phone, and date of birth</li>
+          <li>Confirm with a one-time SMS code</li>
+          <li>A soft credit check helps us verify — <em>no impact on your score</em></li>
+        </ul>
+      </div>
+
+      <div class="apply-step">
+        <div class="apply-step-num">03</div>
+        <h4>Tell us your story</h4>
+        <ul>
+          <li>Share what you're going through</li>
+          <li>Tell us what support would mean</li>
+          <li>We'll be in touch — every story is read</li>
+        </ul>
+        <p class="apply-step-note">Takes about 2 minutes · 100% confidential</p>
+      </div>
+    </div>
+
+    <div class="apply-cta">
+      <a href="https://app.standardgiving.com/applicant/a7729e18-ec5e-43d6-a1e6-7a5a253dfb94" class="btn btn-primary">Start application <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <p class="apply-cta-help">On TikTok or IG? Tap the <strong>⋯</strong> menu and choose "Open in browser." · <a href="https://app.standardgiving.com/applicant/a7729e18-ec5e-43d6-a1e6-7a5a253dfb94">Already applied? Log in</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-section">
+  <div class="container">
+    <div class="section-header" style="margin-bottom: 0;">
+      <div class="section-kicker">In partnership with</div>
+    </div>
+    <div class="trust-logos">
+      <div class="trust-logo">Paris Hilton</div>
+      <div class="trust-divider"></div>
+      <div class="trust-logo">Standard Giving Co.</div>
+    </div>
+    <p class="trust-note">Applications are verified by Standard Giving, a direct giving platform. Funds are distributed by <strong>Global Empowerment Mission Inc.</strong>, a 501(c)(3) public charity (EIN: 45-3782061). Your information is kept confidential and used only to verify the hardship you describe.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Questions</div>
+      <h2 class="section-title">Everything you <em>want to know.</em></h2>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-list active">
+        <details class="faq-item">
+          <summary>Who qualifies?</summary>
+          <div class="faq-body">Applicants must be at least 18 years old, reside in the U.S., be a mother or primary caregiver, and currently be navigating financial hardship. Qualifying does not guarantee selection, but every applicant is reviewed with care.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How long does the application take?</summary>
+          <div class="faq-body">About two minutes. You'll provide your name, date of birth, and phone number, and confirm with an SMS code. Standard Giving then verifies your situation with a soft credit check. If selected, you'll be notified by email.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Will this affect my credit score?</summary>
+          <div class="faq-body">No. A soft credit pull is used strictly to verify your financial situation and does not affect your credit score. It is not visible to lenders or other parties.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What financial information is visible?</summary>
+          <div class="faq-body">Standard Giving sees a soft credit report: credit card balances, outstanding loans, delinquencies, and your overall financial snapshot. This is used only to confirm the hardship you describe, and is kept confidential.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How are recipients selected?</summary>
+          <div class="faq-body">Every application is reviewed with care. We use Standard Giving's verification tools alongside human judgment to reach the moms where support will make the biggest difference.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Who is behind this campaign?</summary>
+          <div class="faq-body">This is a Paris Hilton Mother's Day campaign in partnership with Standard Giving Co., which verifies applicants and operates the platform. Funds are distributed by <a href="https://www.globalempowermentmission.org">Global Empowerment Mission Inc.</a>, a 501(c)(3) public charity (EIN: 45-3782061) with a 4-star Charity Navigator rating.</div>
+        </details>
+        <details class="faq-item">
+          <summary>My question isn't answered here.</summary>
+          <div class="faq-body">We're happy to help. Visit the <a href="https://www.standardgiving.com/faq">full FAQ</a> or email <a href="mailto:support@standardgiving.com">support@standardgiving.com</a>.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Giving is <em>Hot</em></div>
+        <p class="footer-addr">A Paris Hilton Mother's Day campaign, in partnership with Standard Giving Co. Funds distributed by Global Empowerment Mission Inc., a 501(c)(3) public charity (EIN: 45-3782061).</p>
+        <p class="footer-addr" style="margin-top: 12px;">6320 Topanga Canyon Blvd, Suite 1630<br>Woodland Hills, CA 91367</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Get help</h5>
+        <a href="#apply">Apply for support</a>
+        <a href="#">Check application status</a>
+        <a href="mailto:support@standardgiving.com">Contact support</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>About</h5>
+        <a href="https://www.standardgiving.com">Standard Giving</a>
+        <a href="https://www.standardgiving.com/faq">Full FAQ</a>
+        <a href="https://www.standardgiving.com/terms-of-use">Terms</a>
+        <a href="https://www.standardgiving.com/privacy-policy">Privacy</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Standard Giving Co. All rights reserved.</div>
+      <div class="footer-social">
+        <a href="https://instagram.com/standardgiving" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8.5v-3a4 4 0 0 1-4-4h-3v12a2.5 2.5 0 1 1-2.5-2.5V8a5.5 5.5 0 1 0 5.5 5.5v-5c1 .7 2.2 1 3.5 1z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/standard-giving-co" aria-label="LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4zM4 10h4v10H4zM10 10h4v2c.7-1.2 2-2 3.5-2 2.5 0 4.5 2 4.5 4.5V20h-4v-5c0-1.1-.9-2-2-2s-2 .9-2 2v5h-4z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Reveal on scroll
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.apply-step, .faq-item').forEach(el => {
+  el.classList.add('reveal');
+  io.observe(el);
+});
+</script>
+</body>
+</html>
