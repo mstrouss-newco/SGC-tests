@@ -582,78 +582,58 @@ h2.section-title em { font-style: italic; color: var(--pink-700); }
   position: relative;
 }
 
-/* VIDEO TESTIMONIAL — bottom section, vertical video */
-.video-section {
-  padding: 100px 0;
-  background: var(--pink-50);
+/* VIDEO CAROUSEL — UGC-style horizontal scroll */
+.video-carousel-wrap {
   position: relative;
-  overflow: hidden;
-  border-top: 0.5px solid var(--border);
+  margin: 0 -20px 64px;
+  padding: 0 20px;
 }
 
-.video-section::before {
-  content: '';
-  position: absolute;
-  top: -200px;
-  left: -200px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--pink-100) 0%, transparent 70%);
-  opacity: 0.7;
-  pointer-events: none;
+.video-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 0 12px;
+  scroll-padding: 20px;
 }
 
-.video-grid {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 80px;
-  align-items: center;
-  position: relative;
-  z-index: 2;
+.video-carousel::-webkit-scrollbar { display: none; }
+
+.video-card {
+  flex: 0 0 auto;
+  width: 280px;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.video-copy {
-  max-width: 520px;
-}
-
-.video-copy .section-kicker {
-  justify-content: flex-start;
-  margin-bottom: 20px;
-}
-
-.video-copy .section-kicker::before {
-  display: none;
-}
-
-.video-copy h2 {
-  font-family: 'Fraunces', serif;
-  font-weight: 300;
-  font-size: clamp(34px, 4.5vw, 54px);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  color: var(--burgundy);
-  margin-bottom: 24px;
-}
-
-.video-copy h2 em { font-style: italic; color: var(--pink-700); }
-
-.video-copy p {
-  font-size: 17px;
+.video-card-label {
+  font-size: 13px;
   color: var(--text-soft);
-  line-height: 1.6;
-  margin-bottom: 32px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.video-card-label strong {
+  color: var(--burgundy);
+  font-weight: 500;
+  font-style: normal;
 }
 
 .video-vertical {
   position: relative;
   aspect-ratio: 9 / 16;
   width: 100%;
-  max-width: 380px;
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 40px 80px -30px rgba(43, 18, 33, 0.35);
+  box-shadow: 0 20px 40px -20px rgba(43, 18, 33, 0.3);
   background: var(--burgundy);
-  margin-left: auto;
 }
 
 .video-vertical iframe {
@@ -664,11 +644,63 @@ h2.section-title em { font-style: italic; color: var(--pink-700); }
   border: 0;
 }
 
-@media (max-width: 900px) {
-  .video-grid { grid-template-columns: 1fr; gap: 40px; }
-  .video-vertical { margin: 0 auto; max-width: 320px; }
-  .video-copy { max-width: 100%; text-align: center; }
-  .video-copy .section-kicker { justify-content: center; }
+/* Carousel arrows (desktop only) */
+.carousel-arrow {
+  position: absolute;
+  top: calc(50% - 24px);
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 0.5px solid var(--border-strong);
+  color: var(--burgundy);
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 10px 24px -10px rgba(43, 18, 33, 0.2);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.carousel-arrow:hover { background: var(--pink-600); color: white; transform: translateY(-50%) scale(1.06); }
+.carousel-arrow[disabled] { opacity: 0.3; cursor: default; pointer-events: none; }
+
+.carousel-arrow-left { left: -16px; }
+.carousel-arrow-right { right: -16px; }
+
+/* Pagination dots (mobile only) */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-dot.active { background: var(--pink-600); transform: scale(1.3); }
+
+@media (min-width: 900px) {
+  .video-carousel-wrap { margin: 0 0 72px; padding: 0; }
+  .video-carousel {
+    justify-content: center;
+    padding: 4px 0;
+    overflow: visible;
+  }
+  .video-card { width: 320px; }
+  .carousel-arrow { display: flex; }
+  .carousel-dots { display: none; }
 }
 
 .stories-grid {
@@ -906,6 +938,79 @@ h2.section-title em { font-style: italic; color: var(--pink-700); }
   text-align: center;
 }
 
+/* Commitment strip (Sliving Mom Edit) */
+.commitment-strip {
+  max-width: 860px;
+  margin: 0 auto 72px;
+  padding: 24px 32px;
+  background: var(--pink-50);
+  border: 1px solid var(--pink-200);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+}
+
+.commitment-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--pink-600);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.commitment-copy { flex: 1; min-width: 0; }
+
+.commitment-title {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--burgundy);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.commitment-title em { font-style: italic; color: var(--pink-700); font-weight: 500; }
+
+.commitment-sub {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.commitment-cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--burgundy);
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.commitment-cta:hover { background: var(--pink-600); transform: translateY(-1px); }
+
+@media (max-width: 700px) {
+  .commitment-strip {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+    padding: 24px 20px;
+  }
+  .commitment-cta { width: 100%; justify-content: center; }
+}
+
 .trust-logos {
   display: flex;
   align-items: center;
@@ -1134,6 +1239,85 @@ footer {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 
+/* ============================================
+   MOBILE POLISH — overrides for narrow screens
+   ============================================ */
+
+/* Tablet and below */
+@media (max-width: 900px) {
+  .container { padding: 0 24px; }
+  .hero { padding: 64px 0 72px; }
+  .why-section { padding: 32px 0 56px; }
+  .stories-section { padding: 56px 0 64px; }
+  .apply-section { padding: 64px 0; }
+  .trust-section { padding: 48px 0; }
+  .faq-section { padding: 64px 0; }
+  .hero-sub { font-size: 17px; }
+  .section-sub { font-size: 15px; }
+  .section-header { margin-bottom: 40px; }
+  .eyebrow { margin-bottom: 20px; }
+  footer { padding: 48px 0 24px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+/* Phone */
+@media (max-width: 560px) {
+  .container { padding: 0 20px; }
+  .hero { padding: 48px 0 56px; }
+  .hero-sub { font-size: 16px; margin-bottom: 32px; }
+  .hero-ctas { flex-direction: column; align-items: stretch; width: 100%; }
+  .hero-ctas .btn { justify-content: center; width: 100%; }
+  .hero-deadline { margin-top: 20px; font-size: 12px; }
+
+  .pullquote { font-size: 24px; line-height: 1.25; }
+  .section-title { font-size: 30px !important; line-height: 1.1; }
+
+  /* Kicker decorative lines shorter on mobile */
+  .section-kicker { font-size: 10px; letter-spacing: 0.16em; }
+  .section-kicker::before, .section-kicker::after { width: 14px; }
+
+  /* Stories */
+  .stories-section { padding: 48px 0 56px; }
+  .story-card { padding: 24px 22px; }
+  .story-body { font-size: 16px; }
+  .video-vertical { max-width: 260px; }
+  .stories-intro { gap: 32px; margin-bottom: 40px; }
+  .featured-quote { padding: 36px 28px; margin-top: 40px; }
+  .featured-quote::before { left: 20px; top: 8px; font-size: 64px; }
+  .featured-quote-body, .featured-quote-attr { padding-left: 24px; }
+  .stories-source { font-size: 11px; padding: 0 12px; }
+
+  /* Apply */
+  .apply-step { padding: 24px 22px; }
+  .apply-step-num { font-size: 36px; margin-bottom: 12px; }
+  .apply-intro-lead { font-size: 17px; }
+  .apply-cta-help { font-size: 12px; }
+
+  /* Trust */
+  .trust-logos { gap: 20px; }
+  .trust-logo { font-size: 16px; }
+  .trust-divider { display: none; }
+  .trust-note { font-size: 12px; padding: 0 8px; }
+
+  /* FAQ */
+  .faq-item summary { padding: 18px 20px; font-size: 16px; }
+  .faq-body { padding: 0 20px 20px; font-size: 14px; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+  .footer-addr { margin-left: auto; margin-right: auto; }
+  .footer-bottom { gap: 20px; }
+
+  .btn { padding: 14px 24px; font-size: 14px; }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .container { padding: 0 16px; }
+  .hero-title { font-size: 40px !important; line-height: 1.0; }
+  .section-title { font-size: 28px !important; }
+}
+
 /* Reveal animations */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.in { opacity: 1; transform: translateY(0); }
@@ -1209,6 +1393,34 @@ footer {
       <div class="section-kicker">Moms we've shown up for</div>
       <h2 class="section-title">Stories like yours. <em>Real relief.</em></h2>
       <p class="section-sub">Teachers. Single moms. Caregivers. Cancer survivors. Different paths, same reality — financial stress weighing heavy on their shoulders. If you recognize yourself in any of these women, we want to hear from you.</p>
+    </div>
+
+    <div class="video-carousel-wrap">
+      <button class="carousel-arrow carousel-arrow-left" aria-label="Previous video" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <div class="video-carousel" id="videoCarousel">
+        <div class="video-card">
+          <div class="video-vertical">
+            <iframe src="https://player.vimeo.com/video/1106192781?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" title="Celia's story" loading="lazy"></iframe>
+          </div>
+          <p class="video-card-label"><strong>Celia</strong> · In her own words</p>
+        </div>
+
+        <div class="video-card">
+          <div class="video-vertical">
+            <iframe src="https://player.vimeo.com/video/1119605739?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" title="Another story from a mom we've supported" loading="lazy"></iframe>
+          </div>
+          <p class="video-card-label"><strong>Another story</strong> · In her own words</p>
+        </div>
+      </div>
+
+      <button class="carousel-arrow carousel-arrow-right" aria-label="Next video" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <div class="carousel-dots" id="carouselDots" aria-hidden="true"></div>
     </div>
 
     <div class="stories-grid">
@@ -1295,6 +1507,21 @@ footer {
 <!-- TRUST -->
 <section class="trust-section">
   <div class="container">
+
+    <div class="commitment-strip">
+      <div class="commitment-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.5-7 11-7 11z"/></svg>
+      </div>
+      <div class="commitment-copy">
+        <p class="commitment-title">Paris is donating <em>11% of proceeds</em> from the Sliving Mom Edit</p>
+        <p class="commitment-sub">All purchases from April 27 — May 10 are eligible. Every piece gives back.</p>
+      </div>
+      <a href="https://parishilton.com" class="commitment-cta" target="_blank" rel="noopener">
+        Shop the edit
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg>
+      </a>
+    </div>
+
     <div class="section-header" style="margin-bottom: 0;">
       <div class="section-kicker">In partnership with</div>
     </div>
@@ -1345,24 +1572,6 @@ footer {
           <summary>My question isn't answered here.</summary>
           <div class="faq-body">We're happy to help. Visit the <a href="https://www.standardgiving.com/faq">full FAQ</a> or email <a href="mailto:support@standardgiving.com">support@standardgiving.com</a>.</div>
         </details>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO TESTIMONIAL -->
-<section class="video-section">
-  <div class="container">
-    <div class="video-grid">
-      <div class="video-copy">
-        <div class="section-kicker">Hear from her directly</div>
-        <h2>Her story might sound <em>a lot like yours.</em></h2>
-        <p>Watch one of the women we supported talk about what this meant for her — in her own words. If you see yourself in her story, we'd love to hear from you.</p>
-        <a href="#apply" class="btn btn-primary">Apply for support <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-      </div>
-
-      <div class="video-vertical">
-        <iframe src="https://player.vimeo.com/video/1106192781?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" title="Story from a mom we've supported" loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -1420,6 +1629,72 @@ document.querySelectorAll('.apply-step, .faq-item, .story-card').forEach(el => {
   el.classList.add('reveal');
   io.observe(el);
 });
+
+// Video carousel
+(function() {
+  const carousel = document.getElementById('videoCarousel');
+  if (!carousel) return;
+  const cards = carousel.querySelectorAll('.video-card');
+  const leftBtn = document.querySelector('.carousel-arrow-left');
+  const rightBtn = document.querySelector('.carousel-arrow-right');
+  const dotsWrap = document.getElementById('carouselDots');
+
+  // Build dots
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Go to video ${i + 1}`);
+    dot.addEventListener('click', () => {
+      cards[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    });
+    dotsWrap.appendChild(dot);
+  });
+
+  // Sync dots with scroll position
+  let scrollTimeout;
+  carousel.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      const carouselRect = carousel.getBoundingClientRect();
+      const center = carouselRect.left + carouselRect.width / 2;
+      let closestIdx = 0;
+      let closestDist = Infinity;
+      cards.forEach((card, i) => {
+        const r = card.getBoundingClientRect();
+        const cardCenter = r.left + r.width / 2;
+        const dist = Math.abs(cardCenter - center);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIdx = i;
+        }
+      });
+      dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === closestIdx);
+      });
+      updateArrows(closestIdx);
+    }, 80);
+  });
+
+  function updateArrows(idx) {
+    if (leftBtn) leftBtn.disabled = idx === 0;
+    if (rightBtn) rightBtn.disabled = idx === cards.length - 1;
+  }
+  updateArrows(0);
+
+  function scrollToIdx(idx) {
+    idx = Math.max(0, Math.min(cards.length - 1, idx));
+    cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  }
+
+  if (leftBtn) leftBtn.addEventListener('click', () => {
+    const activeIdx = [...dotsWrap.querySelectorAll('.carousel-dot')].findIndex(d => d.classList.contains('active'));
+    scrollToIdx(activeIdx - 1);
+  });
+  if (rightBtn) rightBtn.addEventListener('click', () => {
+    const activeIdx = [...dotsWrap.querySelectorAll('.carousel-dot')].findIndex(d => d.classList.contains('active'));
+    scrollToIdx(activeIdx + 1);
+  });
+})();
 </script>
 </body>
 </html>
