@@ -829,6 +829,16 @@ h2.section-title em { font-style: italic; color: var(--pink-700); }
 
 .stories-source a { color: var(--pink-700); text-decoration: underline; text-underline-offset: 3px; }
 
+.stories-cta {
+  text-align: center;
+  margin-top: 48px;
+}
+
+@media (max-width: 700px) {
+  .stories-cta { margin-top: 36px; }
+  .stories-cta .btn { width: 100%; max-width: 400px; justify-content: center; }
+}
+
 @media (max-width: 900px) {
   .stories-grid { grid-template-columns: 1fr; }
   .featured-quote { padding: 36px 28px; }
@@ -1398,11 +1408,11 @@ footer {
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-7-11a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 6.5-7 11-7 11z"/></svg>
       </div>
       <div class="commitment-copy">
-        <p class="commitment-title">Paris is donating <em>11% of proceeds</em> from the Sliving Mom Edit</p>
-        <p class="commitment-sub">All purchases from April 27 — May 10 go toward supporting moms.</p>
+        <p class="commitment-title">Paris is personally donating <em>$20,000</em> to this fund</p>
+        <p class="commitment-sub">And 11% of every purchase from her Mother's Day edit goes directly here too.</p>
       </div>
-      <a href="https://parishilton.com" class="commitment-cta" target="_blank" rel="noopener">
-        Shop the edit
+      <a href="https://shop.parishilton.com/pages/mothers-day" class="commitment-cta" target="_blank" rel="noopener">
+        See the edit
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </a>
     </div>
@@ -1492,6 +1502,13 @@ footer {
     </div>
 
     <p class="stories-source">Stories and quote from the <a href="https://www.standardgiving.com/impact-report-aug-2025-pariviegives">Standard Giving August 2025 Impact Report</a>. Shared with permission.</p>
+
+    <div class="stories-cta">
+      <a href="https://app.standardgiving.com/applicant/a7729e18-ec5e-43d6-a1e6-7a5a253dfb94" class="btn btn-primary">
+        Apply for support
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
