@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOCK: The Covered Fund with Alex Cooper</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Don't just give. Cover someone's bill. The Covered Fund verifies real financial need and pays the mortgage servicer, lender or utility directly.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ocean:#1C4A63;--oceand:#0F2C3D;--apricot:#F5B380;--apricotd:#C97A45;--apricotl:#FDF2E7;--sky:#A8D3E3;--paper:#F8FBFC;--ink:#12303F;--body:#43606F;--muted:#7B93A1;--line:#E0EAEF;--sora:"Sora",system-ui,sans-serif;--sans:"Instrument Sans",system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;padding-bottom:78px;background:var(--paper);color:var(--body);font:400 18px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--sora);color:var(--ink);font-weight:700;letter-spacing:-.025em;margin:0 0 .55em;line-height:1.15}
+h1{font-size:1.9375rem}h2{font-size:1.75rem}h3{font-size:1.125rem;letter-spacing:-.015em;margin-bottom:.5em}
+p{margin:0 0 1.15em}
+a{color:var(--ocean)}a:hover{color:var(--apricotd)}
+:focus-visible{outline:3px solid var(--apricotd);outline-offset:3px;border-radius:6px}
+.wrap{max-width:620px;margin:0 auto;padding-inline:24px}
+header{position:sticky;top:0;background:rgba(248,251,252,.94);border-bottom:1px solid var(--line);z-index:10;backdrop-filter:blur(8px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+.mark{white-space:nowrap;font-family:var(--sora);font-weight:700;font-size:1.0625rem;letter-spacing:-.03em;color:var(--ocean);text-decoration:none}
+header nav{display:flex;align-items:center;gap:18px;font-size:.875rem;font-weight:500;white-space:nowrap}
+header nav a{text-decoration:none}header nav a:hover{text-decoration:underline}
+header nav .need{background:#E8F1F5;font-size:.8125rem;color:var(--ocean);border-radius:999px;padding:9px 16px;font-weight:600;line-height:1}
+header nav .need:hover{background:var(--ocean);color:#fff;text-decoration:none}
+section{padding-block:56px}
+.hero{padding-block:44px 48px}
+.eyebrow{font-family:var(--sora);font-weight:600;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--apricotd);margin-bottom:18px}
+.lede{font-size:1.1875rem;color:var(--body)}
+.stack{list-style:none;margin:0 0 1.5em;padding:2px 0 2px 22px;border-left:3px solid var(--apricot)}
+.stack li{font-family:var(--sora);font-weight:600;font-size:1.0625rem;line-height:1.45;color:var(--ink);margin-bottom:.5em}
+.stack li:last-child{margin-bottom:0}
+.pull{font-family:var(--sora);font-weight:600;font-size:1.1875rem;line-height:1.45;color:var(--ocean);letter-spacing:-.015em;margin:0 0 1.4em}
+.btn{display:block;text-align:center;text-decoration:none;background:var(--apricot);color:var(--oceand);font-family:var(--sora);font-weight:700;font-size:1.125rem;letter-spacing:-.01em;border-radius:999px;padding:19px 28px;transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 2px 0 rgba(201,122,69,.35)}
+.btn:hover{transform:translateY(-2px);color:var(--oceand);box-shadow:0 6px 18px rgba(201,122,69,.3)}
+.fine{font-size:.875rem;color:var(--muted);text-align:center;margin:14px 0 0}
+.band{background:var(--ocean);color:#fff;font-family:var(--sora);font-weight:600;font-size:1.3125rem;line-height:1.4;letter-spacing:-.02em;text-align:center;padding-block:56px}
+.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.apply{background:var(--ocean);color:#C9DEE8;padding-block:64px}
+.apply h2{color:#fff}.apply .lede{color:#BFD9E4}
+.crit{list-style:none;margin:0 0 28px;padding:0}
+.crit li{position:relative;padding:0 0 0 34px;margin-bottom:14px;font-size:1rem;line-height:1.55;color:#fff}
+.crit li::before{content:"";position:absolute;left:0;top:.28em;width:19px;height:19px;border-radius:50%;border:2px solid var(--apricot)}
+.crit li::after{content:"";position:absolute;left:6px;top:.62em;width:7px;height:4px;border-left:2px solid var(--apricot);border-bottom:2px solid var(--apricot);transform:rotate(-45deg)}
+.apply .btn{background:#fff;color:var(--ocean);box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.apply .btn:hover{color:var(--ocean)}
+.apply .fine{color:#9FC2D2;text-align:left}
+.warm{background:var(--apricotl);border-top:1px solid #F2DCC6;border-bottom:1px solid #F2DCC6}
+.host{background:var(--ocean);color:#C9DEE8;padding-block:64px}
+.host h2{color:#fff}
+.host .lede{color:#BFD9E4}
+.host .wrap{max-width:860px}
+.host .stack{border-left-color:var(--apricot)}.host .stack li{color:#fff}
+.host .pull{color:var(--sky)}
+.host .sub{font-size:.9375rem;color:#9FC2D2;border-top:1px solid rgba(168,211,227,.25);padding-top:18px;margin-top:4px}
+.photo{max-width:200px;aspect-ratio:1;background:var(--oceand);border:1px dashed rgba(168,211,227,.5);border-radius:20px;display:flex;align-items:center;justify-content:center;color:var(--sky);font-size:.8125rem;margin-bottom:30px}
+.cards{display:grid;gap:18px;margin-top:32px}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px}
+.card p{font-size:.9375rem;line-height:1.65;margin-bottom:.7em}.card p:last-child{margin-bottom:0}
+.card .n{font-family:var(--sora);font-weight:700;font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;color:var(--apricotd);display:block;margin-bottom:10px}
+.signpost{margin:26px 0 0;font-family:var(--sora);font-weight:600;font-size:1.0625rem;color:var(--ocean)}
+.signpost a{text-decoration-thickness:2px;text-underline-offset:3px}
+.faqhead{font-family:var(--sora);font-weight:700;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--apricotd);margin:0 0 4px}
+.q{font-family:var(--sora);font-weight:700;color:var(--ink);font-size:1.25rem;letter-spacing:-.02em;margin:0 0 .5em}
+.yes{font-family:var(--sora);font-weight:700;color:var(--apricotd);font-size:2rem;letter-spacing:-.03em;margin:0 0 .3em;line-height:1}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{font-family:var(--sora);font-weight:600;color:var(--ink);font-size:1.0625rem;letter-spacing:-.015em;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--apricotd);font-weight:400;font-size:1.25rem;line-height:1.2}
+details[open] summary::after{content:"3"}
+details p{margin:14px 0 .5em;font-size:.9375rem;line-height:1.65}details p:last-child{margin-bottom:0}
+footer{background:#fff;border-top:1px solid var(--line);padding:52px 0;font-size:.8125rem;color:var(--muted);line-height:1.75}
+footer .tag{font-family:var(--sora);font-weight:600;color:var(--ocean);font-size:.9375rem;margin:8px 0 24px}
+footer ul{display:flex;flex-wrap:wrap;gap:8px 24px;list-style:none;margin:24px 0 16px;padding:0;font-size:.875rem}
+.ask{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0}
+.ask .fine,.ask .trust{flex:1 0 100%}
+.ask input{position:absolute;opacity:0;width:0;height:0}
+.ask label{flex:1 1 40%;text-align:center;font-family:var(--sora);font-weight:600;font-size:.9375rem;padding:11px 8px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--body);cursor:pointer}
+.ask input:checked+label{background:var(--ocean);border-color:var(--ocean);color:#fff}
+.ask input:focus-visible+label{outline:3px solid var(--apricotd);outline-offset:3px}
+.amts{flex:1 0 100%;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.amts a{display:block;text-align:center;text-decoration:none;font-family:var(--sora);font-weight:700;font-size:1.1875rem;padding:18px 8px;border-radius:16px;border:2px solid var(--ocean);color:var(--ocean);background:#fff;transition:transform .15s ease}
+.amts a:hover{transform:translateY(-2px);color:var(--ocean)}
+.amts a.hi{background:var(--apricot);border-color:var(--apricot);color:var(--oceand);box-shadow:0 2px 0 rgba(201,122,69,.35)}
+.amts a.hi:hover{color:var(--oceand)}
+#once:checked~.m,#mo:checked~.o{display:none}
+.trust{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.8125rem;line-height:1.4;color:var(--body);margin:20px 0 0;padding:18px 0 0;list-style:none;border-top:1px solid var(--line)}
+.trust li{position:relative;padding-left:20px;flex:1 1 240px}
+.trust li::before{content:"";position:absolute;left:0;top:.35em;width:12px;height:12px;border-radius:50%;border:2px solid var(--apricot)}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(248,251,252,.97);border-top:1px solid var(--line);padding:10px 16px;z-index:20;backdrop-filter:blur(8px)}
+.sticky .btn{padding:15px 20px;font-size:1.0625rem;margin:0}
+.flow{display:grid;margin-top:34px}
+.fstep{position:relative;padding:0 0 26px 44px}
+.fstep:last-child{padding-bottom:0}
+.fstep::after{content:"";position:absolute;left:13px;top:32px;bottom:2px;width:2px;background:var(--line)}
+.fstep:last-child::after{display:none}
+.fnum{position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--apricot);color:var(--oceand);font-family:var(--sora);font-weight:700;font-size:.8125rem;display:flex;align-items:center;justify-content:center}
+.fstep h3{margin:0 0 .3em}
+.fstep p{font-size:.9375rem;margin:0}
+.recs{display:grid;gap:12px;margin:28px 0 0}
+.rec{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.rec .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.rec b{font-family:var(--sora);font-weight:700;color:var(--ink);font-size:1.0625rem;letter-spacing:-.015em}
+.rec .amt{font-family:var(--sora);font-weight:700;color:var(--ocean);font-size:1.25rem;white-space:nowrap;letter-spacing:-.02em}
+.rec .who{font-size:.875rem;color:var(--body);margin:3px 0 0}
+.rec .sched{font-family:var(--mono,ui-monospace,SFMono-Regular,Menlo,monospace);font-size:.75rem;color:var(--body);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:9px 12px;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:4px 14px}
+.rec .meta{font-size:.8125rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:3px 14px;margin:12px 0 0;padding-top:12px;border-top:1px solid var(--line)}
+.rec .ok{color:var(--apricotd);font-weight:600}
+.herogrid{display:grid;gap:0}
+.hostbar{display:flex;align-items:center;gap:11px;margin:0 0 20px}
+.avatar{width:56px;height:56px;border-radius:50%;background:var(--sky);border:2px solid #fff;box-shadow:0 0 0 1px var(--line);flex:none;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:.5625rem;color:var(--ocean);text-align:center;line-height:1.1}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.match{flex:1 0 100%;background:var(--apricotl);border:1px solid #F2DCC6;border-radius:16px;padding:15px 18px;margin:0 0 14px}
+.match b{display:block;font-family:var(--sora);font-weight:700;color:var(--ink);font-size:1.0625rem;letter-spacing:-.015em}
+.match span{display:block;font-size:.9375rem;color:var(--apricotd);font-weight:600;margin-top:2px}
+.match small{display:block;font-size:.75rem;color:var(--muted);margin-top:7px;line-height:1.5}
+.hostbar b{display:block;font-family:var(--sora);font-weight:700;color:var(--ink);font-size:.9375rem;letter-spacing:-.01em}
+.hostbar span{display:block;font-size:.8125rem;color:var(--muted)}
+.herovid{order:3;max-width:240px;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:var(--oceand);border:1px dashed rgba(168,211,227,.5);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--sky);font-size:.75rem;padding:14px;margin:30px 0 0}
+.herovid iframe{width:100%;height:100%;border:0}
+.hostnote{order:4;font-size:.8125rem;color:var(--muted);line-height:1.6;margin:26px 0 0;padding-top:18px;border-top:1px solid var(--line)}
+.hostquote{font-size:1.125rem;color:var(--body)}
+.hostvid{position:relative;aspect-ratio:9/16;max-width:260px;border-radius:20px;background:var(--oceand);border:1px dashed rgba(168,211,227,.55);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--sky);font-size:.8125rem;padding:18px;margin:0 0 26px}
+.handle{font-family:var(--sora);font-weight:600;color:var(--sky);font-size:.9375rem;margin:0 0 22px}
+.vid{position:relative;aspect-ratio:9/16;max-width:300px;border-radius:20px;overflow:hidden;background:var(--oceand);margin:0 0 14px;border:1px solid var(--line)}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vcap{font-size:.875rem;color:var(--muted);margin:0 0 32px}
+.quote{border-left:3px solid var(--apricot);padding:2px 0 2px 22px;margin:0 0 14px}
+.quote p{font-family:var(--sora);font-weight:600;font-size:1.0625rem;line-height:1.5;color:var(--ink);margin:0 0 .6em}
+.quote cite{font-style:normal;font-size:.875rem;color:var(--muted)}
+@media(min-width:768px){
+h1{font-size:3.25rem}h2{font-size:2.25rem}.sticky{display:none}.amts{grid-template-columns:repeat(4,1fr)}.ask{max-width:520px}.ask label{flex:1 1 30%}.hero{padding-block:96px 76px}section{padding-block:88px}.host{padding-block:88px}.apply{padding-block:88px}
+.wrap{max-width:680px}body{padding-bottom:0}
+.lede{font-size:1.375rem}.pull{font-size:1.375rem}.stack li{font-size:1.1875rem}
+.band{font-size:1.75rem;padding-block:60px}.yes{font-size:2.75rem}.q{font-size:1.4375rem}
+.cards{grid-template-columns:1fr 1fr}
+.flow{grid-template-columns:repeat(3,1fr);gap:32px}
+#how .wrap{max-width:940px}
+.fstep{padding:44px 0 0}
+.fstep::after{left:34px;right:-26px;top:13px;bottom:auto;width:auto;height:2px}
+.recs{gap:16px}
+.hero.wrap{max-width:980px}
+.herogrid{grid-template-columns:1fr 270px;gap:56px;align-items:start}
+.herogrid h1{font-size:2.625rem}
+.herogrid .lede{font-size:1.1875rem}
+.heromain{grid-row:span 2}
+.herovid{order:0;margin:6px 0 0;max-width:none}
+.hostnote{order:0;margin-top:22px}
+.hostgrid{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start}.photo{max-width:none;margin-bottom:0}.hostvid{margin-bottom:0}
+.btn{max-width:400px;margin-left:auto;margin-right:auto}
+}
+@media(max-width:430px){header nav{gap:12px}header nav .howlink{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}.btn:hover{transform:none}}
+.mocknote{background:var(--oceand);color:#BFD9E4;padding:14px 0;font-size:.8125rem;line-height:1.55}
+.mocknote b{display:block;font-family:var(--sora);font-weight:700;color:var(--apricot);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
+.mocknote .wrap{max-width:820px}
+</style>
+</head>
+<body>
+<div class="mocknote"><div class="wrap">
+  <b>Concept mock. Not a live campaign.</b>
+  <span>Alex Cooper has not seen, approved or endorsed this. Her name, the quote, the video and the $100,000 match are placeholders written by Standard Giving for discussion. Payment examples are illustrative. The Par&iacute;vie Gives details describe a real, separate campaign by Paris Hilton.</span>
+</div></div>
+<header><div class="wrap"><a class="mark" href="#top">standard giving</a><nav><a class="howlink" href="#how">How it works</a><a class="need" href="#apply">Need help?</a></nav></div></header>
+<main id="top">
+
+<!-- PER-CAMPAIGN: everything marked [ ] in this hero changes per host. -->
+<div class="hero wrap herogrid">
+  <div class="heromain">
+    <div class="hostbar"><span class="avatar"><!-- swap for a real photo: <img src="alex.jpg" srcset="alex.jpg 1x, alex@2x.jpg 2x" alt="Alex Cooper" width="56" height="56"> -->AC</span><span><b>Alex Cooper</b><span>@alexcooper is hosting The Covered Fund</span></span></div>
+    <h1>Alex is helping cover bills for women who need a little extra help.</h1>
+    <p class="lede hostquote">&ldquo;Everybody I know has had a month where the math did not work. Nobody talks about it. So this month my people are covering it for someone else. Ten dollars. That is it.&rdquo;</p>
+    <p>Help someone catch up on an essential payment before one setback becomes something much harder to recover from. A mortgage. A car payment. A bill that has fallen behind.</p>
+    <div class="ask">
+      <div class="match"><b>Alex is matching every gift, up to $100,000.</b><span>Give $10, it becomes $20.</span><small>Alex has committed $100,000. Every gift is matched until that is used up, then giving continues unmatched.</small></div>
+      <input type="radio" id="mo" name="freq" checked><label for="mo">Monthly</label><input type="radio" id="once" name="freq"><label for="once">One time</label>
+      <div class="amts m"><a class="hi" href="[GIVE_URL]?amount=10&amp;interval=monthly">$10</a><a href="[GIVE_URL]?amount=25&amp;interval=monthly">$25</a><a href="[GIVE_URL]?amount=50&amp;interval=monthly">$50</a><a href="[GIVE_URL]?interval=monthly">Other</a></div>
+      <div class="amts o"><a href="[GIVE_URL]?amount=50&amp;interval=once">$50</a><a class="hi" href="[GIVE_URL]?amount=100&amp;interval=once">$100</a><a href="[GIVE_URL]?amount=250&amp;interval=once">$250</a><a href="[GIVE_URL]?interval=once">Other</a></div>
+      <p class="fine">Any amount from $5 works. Cancel anytime, in one click from any receipt.</p>
+      <ul class="trust"><li>Gifts received by Our Change Foundation, a 501(c)(3)</li><li>Granted to Global Empowerment Mission, rated 4 stars by Charity Navigator</li></ul>
+    </div>
+  </div>
+  <div class="herovid">[Alex&rsquo;s video]<br>9:16, 15 seconds<br>shot on her phone</div>
+  <p class="hostnote">Hosts help raise the money. They do not choose who receives help, review applications, or see applicants&rsquo; financial information. The fund sets the focus for each month.</p>
+</div>
+
+<div class="band"><div class="wrap">Hardship has a hundred causes. Most happen to people doing everything right.</div></div>
+
+
+
+<section id="how" class="alt"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="flow">
+    <div class="fstep"><span class="fnum">1</span><h3>You give</h3><p>Your gift joins the fund with everyone else&rsquo;s.</p></div>
+    <div class="fstep"><span class="fnum">2</span><h3>We verify</h3><p>Using secure technology similar to what banks use, we verify identity, financial profile and need.</p></div>
+    <div class="fstep"><span class="fnum">3</span><h3>We help</h3><p>Whenever possible, assistance goes toward the underlying mortgage, car payment or other verified obligation. In some emergencies, cash may be the more effective way to help.</p></div>
+  </div>
+  <p class="pull" style="margin:34px 0 0">Everyone we help is verified, so you know your giving is going exactly where it is needed.</p>
+</div></section>
+
+<section class="wrap">
+  <h2>See what your giving made possible.</h2>
+  <div class="recs">
+    <div class="rec">
+      <div class="top"><b>Mortgage caught up</b><span class="amt">$8,040</span></div>
+      <p class="who">Six payments made to the loan servicer.</p>
+    </div>
+    <div class="rec">
+      <div class="top"><b>Car payment</b><span class="amt">$1,236</span></div>
+      <p class="who">Three payments made to the lender, and the repossession notice withdrawn.</p>
+    </div>
+    <div class="rec">
+      <div class="top"><b>Utilities caught up</b><span class="amt">$286</span></div>
+      <p class="who">Past due balance cleared with the utility, shutoff cancelled.</p>
+    </div>
+  </div>
+
+  <h3 style="margin:44px 0 .5em;font-size:1.375rem">Behind every payment is a person.</h3>
+  <p>Your giving does not disappear into a black hole. Every month you get a report: what was covered, how much it came to, what was going on and how it turned out. Most of the time we can tell you all of that without saying who.</p>
+  <p>When someone wants to put their name, their face or their own words to it, that is their call, and we only share it with their permission.</p>
+
+  <!-- Alternates: 1116832194 (Bradley, base template) &middot; 1106192781 (Celia) -->
+  <p class="q" style="margin:44px 0 .4em">This is what a good month looks like.</p>
+  <p>Paris Hilton built her own version of this. Through her skincare brand Par&iacute;vie, her community covered payments for eleven single moms and caregivers, most of them working more than one job. Same verification, same direct payments, same report back to everyone who gave.</p>
+  <div class="vid" style="margin-top:26px"><iframe src="https://player.vimeo.com/video/1119605739?dnt=1" title="Impact recap" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+  <p class="vcap">Impact recap from Par&iacute;vie Gives, Paris Hilton&rsquo;s own community.</p>
+  <blockquote class="quote"><p>&ldquo;Opportunities like this can make the world better. Can make teachers be more successful and take the burdens off of our backs. And when I am able, I would like to pay it forward.&rdquo;</p><cite>Megan, special education teacher, Michigan. Shared with permission.</cite></blockquote>
+</section>
+
+<section class="warm"><div class="wrap">
+  <h2>Does $10 really do anything?</h2>
+  <p class="yes">Yes.</p>
+  <p class="lede">Not because $10 pays someone&rsquo;s mortgage on its own. It doesn&rsquo;t.</p>
+  <p>But yours, plus someone else&rsquo;s, plus hundreds or thousands more? Now we can cover something that really matters.</p>
+  <a class="btn" href="[GIVE_URL]?amount=10&amp;interval=monthly">Give $10 a month</a>
+  <p class="fine">One time or monthly. Cancel anytime.</p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>A few things you might want to know.</h2>
+  <p class="faqhead">About the fund</p>
+  <details><summary>What kinds of expenses can you help with?</summary><p>Essential payments where falling behind causes lasting damage. Today that means mortgage payments, car payments, and important bills that have fallen behind. What fits depends on the situation and the obligation itself.</p></details>
+  <details><summary>Can you cover more than one payment?</summary><p>Yes. Where it makes the difference between steadying and slipping further, we can cover the same obligation for several months, for example a mortgage or a car payment over six months, rather than patching a single month.</p></details>
+  <details><summary>Can assistance ever be cash?</summary><p>Sometimes. We prioritize paying the obligation itself, because that is usually what solves the problem. In emergencies and disaster relief, getting money to someone quickly can be the more effective way to help.</p></details>
+  <p class="faqhead" style="margin-top:34px">If you give</p>
+  <details><summary>Where does my gift go?</summary><p>Into the Covered Fund alongside gifts from the rest of the community, then out as assistance to people who qualify. Pooling gifts lets help go where it does the most good rather than tying one gift to one person.</p></details>
+  <details><summary>Is my gift tax deductible?</summary><p>Yes. Gifts are received by Our Change Foundation, a 501(c)(3), and your receipt is emailed to you.</p></details>
+  <details><summary>Can I cancel a monthly gift?</summary><p>Anytime, in one click from any receipt.</p></details>
+  <details><summary>Does the host choose who gets help?</summary><p>No. Hosts help raise the money. They never review applications, choose who receives help, or see anyone&rsquo;s financial information. Every application goes through the same review.</p></details>
+  <p class="faqhead" style="margin-top:34px">If you need help</p>
+  <details><summary>How do you verify someone actually needs help?</summary><p>With their permission, we use secure technology similar to what banks use to confirm identity, review their financial profile, and check that the need is real. That way decisions rest on real information rather than on who tells the best story.</p></details>
+  <details><summary>Will my story be shared if I receive help?</summary><p>We report back to donors about what their giving accomplished. That can include the expense covered, the amount of assistance, the circumstances and the outcome, without identifying you.</p><p>Your name, photo, video and any other identifying details are only ever shared if you agree to take part.</p></details>
+</div></section>
+
+<!-- APPLICATIONS CLOSED VARIANT: swap this in when the month's applications close.
+<section id="apply" class="apply"><div class="wrap">
+  <h2>Applications are closed for now.</h2>
+  <p class="lede">This campaign is not accepting new applications. A new host opens the fund again next month.</p>
+  <a class="btn" href="[NOTIFY_URL]">Tell me when it reopens</a>
+</div></section>
+-->
+<section id="apply" class="apply"><div class="wrap">
+  <h2>Need help with a payment?</h2>
+  <p class="lede">If you have fallen behind on something essential, ask us. It takes a few minutes and there is no fundraiser to build and no audience to convince.</p>
+  <ul class="crit">
+    <li>You live in the United States and you are 18 or older.</li>
+    <li>You are behind, or about to fall behind, on a mortgage, a car payment or another important bill.</li>
+    <li>With your permission, we confirm your identity, look at your financial profile and check the need.</li>
+    <li>Where we can, we pay the mortgage servicer, the lender or the utility directly. In an emergency, we may get money to you instead.</li>
+  </ul>
+  <a class="btn" href="[APPLY_URL]">Apply for help</a>
+  <p class="fine">You do not need to know the host. Verification uses a soft credit check, which does not affect your credit score.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <p class="mark">standard giving</p>
+  <p class="tag">People first. Always.</p>
+  <p>The Covered Fund is a program of Standard Giving. Gifts are received by Our Change Foundation (EIN 86-3353394) and granted to Global Empowerment Mission. Gifts are unrestricted and go to the general fund. Standard Giving is paid a 20% fee on funds distributed through the platform, covering verification and payments, and never handles your gift. Hosts are unpaid and take no part in selection.</p>
+  <ul><li><a href="/privacy-policy">Privacy</a></li><li><a href="/terms-of-use">Terms</a></li><li><a href="[MANAGE_URL]">Manage or cancel a monthly gift</a></li></ul>
+  <p>[STATE_DISCLOSURES]</p>
+</div></footer>
+<div class="sticky"><a class="btn" href="[GIVE_URL]?amount=10&amp;interval=monthly">Give $10, matched</a></div>
+</body>
+</html>
