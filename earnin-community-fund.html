@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOCK: The EarnIn Community Fund</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --yellow:#FFEC3D; --cream:#F5F4F0; --black:#000; --white:#fff;
+    --mint:#00D39F; --gray:#9C9C9C; --gray-2:#6B6B6B; --line:#E3E1DA;
+    --display:'Outfit',ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    --ui:'Inter',ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    --max:1180px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--cream);color:var(--black);font-family:var(--ui);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  img{max-width:100%}
+  h1,h2,h3,.display{font-family:var(--display)}
+
+  .concept{background:var(--black);color:var(--white);font-size:12px;padding:9px 24px;text-align:center;position:sticky;top:0;z-index:80;line-height:1.5}
+  .concept b{color:var(--yellow);letter-spacing:.06em}
+
+  nav{background:var(--cream);position:sticky;top:33px;z-index:70}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 24px;max-width:var(--max);margin:0 auto}
+  .lockup{display:flex;align-items:center;gap:11px}
+  .logo{display:inline-flex;align-items:center;background:var(--black);color:var(--white);border-radius:9999px;padding:7px 13px 7px 15px;font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em}
+  .logo .in{display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;border:1.5px solid var(--white);border-radius:9999px;font-size:13px;font-weight:600;margin-left:3px}
+  .lockup .div{width:1px;height:19px;background:#CFCDC5}
+  .lockup .prog{font-family:var(--display);font-weight:600;font-size:15.5px}
+  .navlinks{display:flex;gap:26px;font-size:15px;font-weight:500}
+  .navlinks a{color:var(--black);opacity:.72;text-decoration:none}
+  .btn{display:inline-flex;align-items:center;gap:9px;border:0;border-radius:9999px;font-family:var(--ui);font-weight:600;text-decoration:none;cursor:pointer;transition:transform .12s}
+  .btn:active{transform:scale(.985)}
+  .btn-blk{background:var(--black);color:var(--white);padding:9px 18px;font-size:14.5px}
+  .btn-lg{padding:17px 34px;font-size:17px}
+  .btn-out{background:transparent;color:var(--black);border:1.5px solid #D6D3CA;padding:15.5px 32px;font-size:17px}
+  .arw{font-size:15px;line-height:1}
+
+  .eyebrow-sm{font-family:var(--ui);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin:0 0 16px}
+
+  .hero{padding:60px 0 20px;text-align:center}
+  .pill-live{display:inline-flex;align-items:center;gap:9px;background:var(--white);border-radius:9999px;padding:8px 17px 8px 12px;font-size:13.5px;font-weight:600;margin-bottom:26px}
+  .dot{width:8px;height:8px;border-radius:9999px;background:var(--mint);display:inline-block}
+  h1{font-size:clamp(38px,7.1vw,80px);font-weight:800;letter-spacing:-.022em;line-height:1.06;margin:0 auto 24px;max-width:15ch}
+  .hero .lede{font-size:clamp(17px,2.1vw,20px);color:var(--gray-2);max-width:47ch;margin:0 auto 34px;line-height:1.5}
+  .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .hero .fine{margin-top:20px;font-size:14px;color:var(--gray)}
+
+  .fund-note{background:var(--white);border-radius:24px;padding:38px 34px;text-align:center;margin-top:52px}
+  .fund-note .big{font-family:var(--display);font-size:clamp(23px,3.3vw,32px);font-weight:600;letter-spacing:-.017em;line-height:1.25;margin:0 0 10px;max-width:26ch;margin-left:auto;margin-right:auto}
+  .fund-note p{margin:0;color:var(--gray-2);font-size:16px;max-width:52ch;margin-left:auto;margin-right:auto}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:20px 0 8px}
+  .card{border-radius:24px;padding:30px 28px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
+  .card.a{background:var(--black);color:var(--white)}
+  .card.b{background:var(--yellow)}
+  .card.c{background:var(--white)}
+  .card .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin:0 0 auto}
+  .card h3{font-size:28px;font-weight:600;letter-spacing:-.015em;line-height:1.13;margin:26px 0 10px}
+  .card .amt{font-family:var(--display);font-size:clamp(32px,4.4vw,44px);font-weight:700;letter-spacing:-.025em;line-height:1.05;margin:26px 0 10px}
+  .card p{font-size:15.5px;line-height:1.5;margin:0;opacity:.8}
+  .card.a p{opacity:.72}
+
+  section{padding:78px 0}
+  .center{text-align:center}
+  h2{font-size:clamp(30px,4.8vw,56px);font-weight:400;letter-spacing:-.016em;line-height:1.1;margin:0 0 18px}
+  h2.tight{max-width:19ch}
+  .center h2{margin-left:auto;margin-right:auto}
+  .sec-lede{font-size:18px;color:var(--gray-2);max-width:54ch;margin:0 0 46px;line-height:1.5}
+  .center .sec-lede{margin-left:auto;margin-right:auto}
+
+  /* stories */
+  .stories{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .story{background:var(--white);border-radius:22px;padding:32px 28px;display:flex;flex-direction:column}
+  .story .ph{height:56px;width:56px;border-radius:9999px;background:var(--cream);border:1px dashed #CFCDC5;display:flex;align-items:center;justify-content:center;font-size:9.5px;color:var(--gray);font-weight:700;letter-spacing:.08em;margin-bottom:20px;text-align:center;line-height:1.2}
+  .story .nm{font-family:var(--display);font-size:24px;font-weight:600;letter-spacing:-.014em;margin:0 0 4px}
+  .story .rl{font-size:11.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--gray);margin:0 0 14px}
+  .story p{font-size:15.5px;color:var(--gray-2);margin:0 0 18px;line-height:1.55}
+  .story .out{margin:auto 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:14.5px;font-weight:500;color:var(--black)}
+  .perm{text-align:center;font-size:13.5px;color:var(--gray);margin:26px 0 0}
+
+  /* how it works */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .step{background:var(--white);border-radius:22px;padding:32px 28px}
+  .step .n{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--gray);margin:0 0 16px}
+  .step h3{font-size:23px;font-weight:600;letter-spacing:-.014em;margin:0 0 16px;line-height:1.2}
+  .step ul{list-style:none;padding:0;margin:0}
+  .step li{font-size:15.5px;color:var(--gray-2);line-height:1.5;padding:0 0 0 24px;margin-bottom:11px;position:relative}
+  .step li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:9999px;background:var(--yellow)}
+  .step li:last-child{margin-bottom:0}
+  .steps-fine{text-align:center;margin:30px 0 0;font-size:15px;color:var(--gray-2)}
+
+  /* promise band */
+  .band{background:var(--black);color:var(--white);border-radius:32px;padding:64px 52px}
+  .band h2{color:var(--white)}
+  .band-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:46px}
+  .band .p-t{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:19px;font-weight:600;margin:0 0 9px;letter-spacing:-.01em}
+  .band .p-d{font-size:15.5px;color:rgba(255,255,255,.62);margin:0;line-height:1.55}
+  .tick{width:22px;height:22px;border-radius:9999px;background:var(--yellow);color:var(--black);display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:0 0 auto}
+
+  /* partners */
+  .p-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .p-card{background:var(--white);border-radius:22px;padding:34px 30px}
+  .p-logo{height:38px;border-radius:9px;background:var(--cream);border:1px dashed #CFCDC5;display:inline-flex;align-items:center;padding:0 16px;font-size:10.5px;color:var(--gray);font-weight:700;letter-spacing:.11em;margin-bottom:20px}
+  .p-card .nm{font-family:var(--display);font-weight:600;font-size:23px;letter-spacing:-.013em;margin:0 0 10px}
+  .p-card p{font-size:15.5px;color:var(--gray-2);margin:0;line-height:1.55}
+  .p-role{display:inline-block;margin-top:16px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:var(--yellow);border-radius:9999px;padding:5px 12px}
+  .legal-note{margin:30px auto 0;max-width:74ch;text-align:center;font-size:14px;color:var(--gray-2);line-height:1.6}
+
+  /* apply card */
+  .apply-card{background:var(--white);border-radius:32px;padding:64px 48px;max-width:760px;margin:0 auto;text-align:center}
+  .apply-card h2{font-size:clamp(30px,4.4vw,46px);margin-bottom:16px}
+  .apply-lede{font-size:18px;color:var(--gray-2);max-width:46ch;margin:0 auto 32px;line-height:1.5}
+  .apply-fine{margin:18px 0 0;font-size:14px;color:var(--gray)}
+  .softnote{background:var(--cream);border-radius:18px;padding:22px 24px;font-size:14.5px;color:var(--gray-2);line-height:1.6;margin:34px 0 0;text-align:left}
+  .softnote b{color:var(--black)}
+  .disclaim{font-size:12.5px;color:var(--gray);text-align:center;margin:18px 0 0;line-height:1.5}
+  .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .tl div{background:var(--white);border-radius:22px;padding:30px 28px}
+  .tl .w{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin:0 0 10px}
+  .tl .b{font-size:15.5px;color:var(--gray-2);margin:0;line-height:1.55}
+
+  .q{border-top:1px solid var(--line);padding:26px 0;display:grid;grid-template-columns:1fr 1.35fr;gap:30px}
+  .q:last-child{border-bottom:1px solid var(--line)}
+  .q h4{font-family:var(--display);margin:0;font-size:20px;font-weight:600;letter-spacing:-.012em;line-height:1.25}
+  .q p{margin:0;font-size:16px;color:var(--gray-2);line-height:1.55}
+
+  .tail{background:var(--yellow);border-radius:32px;padding:70px 40px;text-align:center}
+  .tail h2{max-width:18ch;margin-left:auto;margin-right:auto}
+  .tail p{font-size:18px;color:rgba(0,0,0,.68);max-width:45ch;margin:0 auto 32px}
+
+  footer{background:var(--black);color:rgba(255,255,255,.55);padding:56px 0 44px;font-size:14px;margin-top:78px}
+  footer .f-top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.13);margin-bottom:28px}
+  footer .lockup .div{background:rgba(255,255,255,.25)}
+  footer .lockup .prog{color:var(--white)}
+  footer .logo{background:var(--white);color:var(--black)}
+  footer .logo .in{border-color:var(--black)}
+  footer p{margin:0 0 14px;max-width:80ch;line-height:1.65;font-size:13.5px}
+
+  @media (max-width:860px){
+    .navlinks{display:none}
+    .cards,.steps,.p-grid,.tl,.band-grid,.stories{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr}
+    .q{grid-template-columns:1fr;gap:10px}
+    section{padding:54px 0}
+    .band{padding:42px 26px;border-radius:26px}
+    .form-card{padding:32px 24px;border-radius:26px}
+    .tail{padding:48px 24px;border-radius:26px}
+    .hero{padding:40px 0 10px}
+  }
+</style>
+</head>
+<body>
+
+<div class="concept">
+  <b>CONCEPT MOCK. NOT A LIVE CAMPAIGN.</b> EarnIn has not seen, approved or endorsed this. Their name, brand, the $25,000 monthly fund and the partnership shown are placeholders written by Standard Giving. Global Empowerment Mission has not agreed to participate. Nothing here is an EarnIn communication, no application is being accepted, and the button does not work.
+</div>
+
+<nav>
+  <div class="nav-in">
+    <div class="lockup">
+      <span class="logo">earn<span class="in">in</span></span>
+      <span class="div"></span>
+      <span class="prog">Community Fund</span>
+    </div>
+    <div class="navlinks">
+      <a href="#why">About</a>
+      <a href="#stories">Stories</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#apply" class="btn btn-blk">Apply now <span class="arw">→</span></a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="pill-live"><span class="dot"></span>Applications open</span>
+    <p class="eyebrow-sm">EarnIn × Standard Giving</p>
+    <h1>Some months, getting paid early is not enough.</h1>
+    <p class="lede">The EarnIn Community Fund gives direct cash grants to people going through a hard stretch. Nothing to pay back, nothing owed to anyone. Money that is simply yours.</p>
+    <div class="hero-btns">
+      <a href="#apply" class="btn btn-blk btn-lg">Apply now <span class="arw">→</span></a>
+      <a href="#how" class="btn btn-out">See how it works</a>
+    </div>
+    <p class="fine">Takes about 2 minutes &nbsp;·&nbsp; 100% confidential</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="fund-note">
+    <p class="big">EarnIn is putting $25,000 into this fund every month.</p>
+    <p>All of it goes out as direct grants to people who need it. Nothing is held back for overhead, and nobody is charged a cent to apply.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card a">
+      <p class="k">Nothing to pay back</p>
+      <div>
+        <h3>Nothing to pay back.</h3>
+        <p>No interest, no fees, no tip, no repayment. You will never owe a dollar for this.</p>
+      </div>
+    </div>
+    <div class="card b">
+      <p class="k">How much</p>
+      <div>
+        <p class="amt">$250 to $2,500</p>
+        <p>Sized to the actual problem. Most grants land between $500 and $1,000.</p>
+      </div>
+    </div>
+    <div class="card c">
+      <p class="k">What it takes</p>
+      <div>
+        <h3>Two minutes. No paperwork.</h3>
+        <p>No pay stubs, no bills to photograph, nothing to dig out of a drawer. Just tell us what is going on.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap center">
+    <p class="eyebrow-sm">Why this, why now</p>
+    <h2 class="tight">Getting paid today helps. Sometimes it is not enough.</h2>
+    <p class="sec-lede">Getting to your money sooner solves a timing problem. It does not solve a $900 car repair, a deposit you cannot cover, or a month where the math simply does not work. Most people are one unexpected expense away from a much worse month. This fund is for that expense.</p>
+  </div>
+</section>
+
+<section id="stories" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow-sm center">People we have shown up for</p>
+    <h2 class="tight center">Real people. Real relief.</h2>
+    <p class="sec-lede center">Every story here was shared with us directly, and published with written permission.</p>
+    <div class="stories">
+      <div class="story">
+        <div class="ph">PHOTO<br>PLACEHOLDER</div>
+        <p class="nm">[Name]</p>
+        <p class="rl">[Job · State]</p>
+        <p>[Two or three sentences in the recipient's own situation. What they were facing, in plain language, without turning it into a sob story. Sourced from a consented application.]</p>
+        <p class="out">[What the grant changed, one sentence.]</p>
+      </div>
+      <div class="story">
+        <div class="ph">PHOTO<br>PLACEHOLDER</div>
+        <p class="nm">[Name]</p>
+        <p class="rl">[Job · State]</p>
+        <p>[Second story. Vary the situation type: a medical bill, a car, a rent gap, a month between jobs. Keep the range wide so readers see themselves.]</p>
+        <p class="out">[What the grant changed, one sentence.]</p>
+      </div>
+      <div class="story">
+        <div class="ph">PHOTO<br>PLACEHOLDER</div>
+        <p class="nm">[Name]</p>
+        <p class="rl">[Job · State]</p>
+        <p>[Third story. Ideally one where the amount was small and the effect was large, which is the most persuasive kind.]</p>
+        <p class="out">[What the grant changed, one sentence.]</p>
+      </div>
+    </div>
+    <p class="perm">Stories and quotes from the Standard Giving impact report. Shared with permission.</p>
+  </div>
+</section>
+
+<section id="how" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow-sm center">How it works</p>
+    <h2 class="tight center">Three steps, start to finish.</h2>
+    <p class="sec-lede center">We tried to make this the easiest form you will fill out this month.</p>
+    <div class="steps">
+      <div class="step">
+        <p class="n">01</p>
+        <h3>Check eligibility</h3>
+        <ul>
+          <li>U.S. resident, 18 or older</li>
+          <li>Currently navigating financial hardship</li>
+          <li>You do not need to be an EarnIn customer</li>
+        </ul>
+      </div>
+      <div class="step">
+        <p class="n">02</p>
+        <h3>Verify your situation</h3>
+        <ul>
+          <li>Share your name, phone, and date of birth</li>
+          <li>Confirm with a one-time text code</li>
+          <li>A soft credit check helps us verify. No impact on your score.</li>
+        </ul>
+      </div>
+      <div class="step">
+        <p class="n">03</p>
+        <h3>Tell us your story</h3>
+        <ul>
+          <li>Share what you are going through</li>
+          <li>Tell us what support would mean</li>
+          <li>You get a confirmation as soon as it lands</li>
+        </ul>
+      </div>
+    </div>
+    <p class="steps-fine">Takes about 2 minutes &nbsp;·&nbsp; 100% confidential</p>
+  </div>
+</section>
+
+<section style="padding-top:12px">
+  <div class="wrap">
+    <div class="band">
+      <h2 class="tight">What we promise you.</h2>
+      <div class="band-grid">
+        <div>
+          <p class="p-t"><span class="tick">✓</span>You know it went through</p>
+          <p class="p-d">A confirmation with a reference number lands in your inbox as soon as you apply, so you are never left wondering whether it sent.</p>
+        </div>
+        <div>
+          <p class="p-t"><span class="tick">✓</span>No consequences</p>
+          <p class="p-d">Applying has zero effect on your EarnIn account, your access to any product, or your credit score. Being turned down changes nothing.</p>
+        </div>
+        <div>
+          <p class="p-t"><span class="tick">✓</span>Your story stays yours</p>
+          <p class="p-d">Nothing you write is published, shared or used in marketing without your written permission, asked for separately and afterward.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="wrap">
+    <div class="apply-card">
+      <p class="eyebrow-sm" style="color:rgba(0,0,0,.45)">Ready when you are</p>
+      <h2>Apply now.</h2>
+      <p class="apply-lede">The application is handled by Standard Giving. It takes about two minutes and there is nothing to upload.</p>
+      <a href="#" class="btn btn-blk btn-lg" aria-disabled="true">Apply now <span class="arw">→</span></a>
+      <p class="apply-fine">Takes about 2 minutes &nbsp;·&nbsp; 100% confidential</p>
+      <p class="softnote"><b>What happens when you click.</b> Standard Giving will ask for your name, phone and date of birth, send you a one-time text code, and run a soft credit check to confirm your identity and the hardship you describe. A soft check does not affect your credit score and is never reported to lenders as an inquiry. Your information is used only for this. It is never sold, and it is never shared with EarnIn.</p>
+      <p class="disclaim">Concept mockup. This button is not connected to anything.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:12px">
+  <div class="wrap">
+    <h2 class="tight">After you apply.</h2>
+    <p class="sec-lede">So you are not left wondering.</p>
+    <div class="tl">
+      <div>
+        <p class="w">Right away</p>
+        <p class="b">A confirmation from Standard Giving that your application arrived, with a reference number you can hold on to.</p>
+      </div>
+      <div>
+        <p class="w">If you are selected</p>
+        <p class="b">Standard Giving reaches out directly to confirm a few details before any funds move.</p>
+      </div>
+      <div>
+        <p class="w">After a grant</p>
+        <p class="b">Funds sent to you or to the bill you named. No follow-up obligations of any kind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow-sm center">In partnership with</p>
+    <h2 class="tight center">Is this for real?</h2>
+    <p class="sec-lede center">Fair question, and you should ask it of anyone offering you money. Here is exactly who is involved and what each of us does.</p>
+    <div class="p-grid">
+      <div class="p-card">
+        <div class="p-logo">SG LOGO</div>
+        <p class="nm">Standard Giving</p>
+        <p>A direct giving platform. Standard Giving runs the application, verifies every request, and decides who gets funded. Your application goes here and stays here.</p>
+        <span class="p-role">Verifies applications</span>
+      </div>
+      <div class="p-card">
+        <div class="p-logo">GEM LOGO</div>
+        <p class="nm">Global Empowerment Mission</p>
+        <p>A 501(c)(3) public charity that has put direct aid in the hands of families across the country and around the world, usually within days of them needing it.</p>
+        <span class="p-role">Distributes the funds</span>
+      </div>
+    </div>
+    <p class="legal-note">Applications are verified by Standard Giving, a direct giving platform. Funds are distributed by Global Empowerment Mission Inc., a 501(c)(3) public charity (EIN: 45-3782061). Your information is kept confidential and used only to verify the hardship you describe. EarnIn funds the program and does not review applications or receive applicant information.</p>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:12px">
+  <div class="wrap">
+    <p class="eyebrow-sm">Questions</p>
+    <h2 class="tight" style="margin-bottom:36px">Everything you want to know.</h2>
+    <div class="q"><h4>Who qualifies?</h4><p>Any U.S. resident 18 or older who is currently navigating financial hardship. You do not need to be an EarnIn customer, and you do not need to be employed.</p></div>
+    <div class="q"><h4>Is this a loan?</h4><p>No. It is a grant. Nothing to repay, no interest, no fees, and no tip of any kind.</p></div>
+    <div class="q"><h4>How long does the application take?</h4><p>About two minutes. There is nothing to upload and no documents to gather.</p></div>
+    <div class="q"><h4>Will this affect my credit score?</h4><p>No. We use a soft credit check to verify your identity and situation. Soft checks are never reported to lenders as an inquiry and do not change your score.</p></div>
+    <div class="q"><h4>What financial information is visible?</h4><p>Only what is needed to confirm the hardship you describe. It is held by Standard Giving, never sold, and never shared with EarnIn.</p></div>
+    <div class="q"><h4>Does EarnIn see my application?</h4><p>No. EarnIn is told how much went out and to how many households. It never receives individual applications or applicant details, and applying has no effect on your account.</p></div>
+    <div class="q"><h4>Is everyone who applies funded?</h4><p>No. The fund is limited and we are not able to fund every request, or to follow up with every applicant individually. You will always get a confirmation that your application arrived.</p></div>
+    <div class="q"><h4>My question isn't answered here.</h4><p>Email support@standardgiving.com and we will get back to you.</p></div>
+  </div>
+</section>
+
+<section style="padding-top:12px">
+  <div class="wrap">
+    <div class="tail">
+      <h2>If this month is the hard one, apply.</h2>
+      <p>Two minutes, nothing to pay back, and no one is going to sell you anything.</p>
+      <a href="#apply" class="btn btn-blk btn-lg">Apply now <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="lockup">
+        <span class="logo">earn<span class="in">in</span></span>
+        <span class="div"></span>
+        <span class="prog">Community Fund</span>
+      </div>
+      <div style="font-size:13.5px">support@standardgiving.com</div>
+    </div>
+    <p>An EarnIn initiative, in partnership with Standard Giving. Applications are verified by Standard Giving. Funds are distributed by Global Empowerment Mission Inc., a 501(c)(3) public charity (EIN: 45-3782061).</p>
+    <p>Grants are charitable assistance, not a financial product, and carry no repayment obligation. Applying has no effect on any EarnIn account or product. Grant funding is limited and applications are not guaranteed to be funded.</p>
+    <p style="opacity:.55;font-size:12.5px;margin-bottom:0">Concept mockup prepared for discussion purposes. Not a live page and not an EarnIn communication. Entity and address block to be confirmed before use.</p>
+  </div>
+</footer>
+
+</body>
+</html>
