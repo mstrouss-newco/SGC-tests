@@ -180,6 +180,49 @@
   .mail .sign{color:var(--gray-2);font-size:16px;margin-top:28px}
   .mail .mfoot{border-top:1px solid var(--line);margin-top:34px;padding-top:22px;font-size:12.5px;color:var(--gray);line-height:1.6}
   @media (max-width:860px){ .mail{padding:28px 22px 32px} .mailmeta{padding:18px 20px} .mailview{padding:28px 16px 60px} }
+
+  /* email refinements */
+  .mail .opener{font-family:var(--display);font-size:clamp(26px,3.4vw,34px);font-weight:600;letter-spacing:-.022em;line-height:1.18;margin:0 0 24px;color:#0A0A0A}
+  .mail .stat{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:22px 0;margin:30px 0}
+  .mail .stat b{display:block;font-family:var(--display);font-size:38px;font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:8px}
+  .mail .stat span{font-size:15.5px;color:var(--gray-2);line-height:1.55}
+  .mail .ps{font-size:15px;color:var(--gray-2);line-height:1.6;margin-top:26px}
+
+  /* social / IG stories */
+  .socialview{padding:44px 24px 90px;background:#141414;min-height:70vh}
+  .socialwrap{max-width:1000px;margin:0 auto}
+  .socialhint{text-align:center;font-size:13px;color:#8A867C;margin:0 0 30px;line-height:1.55}
+  .frames{display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+  .frame{width:278px;height:494px;border-radius:26px;overflow:hidden;position:relative;display:flex;flex-direction:column;flex:0 0 auto;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+  .frame.f1{background:var(--yellow);color:var(--black)}
+  .frame.f2{background:#2A2724;color:var(--white)}
+  .frame.f3{background:var(--black);color:var(--white)}
+  .bars{position:absolute;top:10px;left:12px;right:12px;display:flex;gap:4px;z-index:5}
+  .bars i{height:2.5px;border-radius:2px;flex:1;background:rgba(255,255,255,.35)}
+  .bars i.on{background:var(--white)}
+  .frame.f1 .bars i{background:rgba(0,0,0,.22)}
+  .frame.f1 .bars i.on{background:rgba(0,0,0,.75)}
+  .ighead{position:absolute;top:24px;left:14px;right:14px;display:flex;align-items:center;gap:8px;z-index:5;font-size:12.5px;font-weight:600}
+  .ava{width:26px;height:26px;border-radius:9999px;background:var(--black);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:var(--yellow);letter-spacing:-.02em}
+  .frame.f1 .ava{background:var(--black);color:var(--yellow)}
+  .ighead .t{opacity:.6;font-weight:500}
+  .fbody{flex:1;display:flex;flex-direction:column;justify-content:center;padding:64px 22px 22px}
+  .fbig{font-family:var(--display);font-size:29px;font-weight:700;letter-spacing:-.028em;line-height:1.1;margin:0}
+  .fsub{font-size:14.5px;line-height:1.5;margin:16px 0 0;opacity:.72}
+  .fphoto{position:absolute;inset:0;background:linear-gradient(180deg,#4A443D 0%,#232019 100%);display:flex;align-items:center;justify-content:center}
+  .fphoto span{font-size:10.5px;letter-spacing:.14em;font-weight:700;color:rgba(255,255,255,.34);text-align:center;line-height:1.7}
+  .fquote{position:relative;z-index:3;margin-top:auto;padding:22px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.82) 42%)}
+  .fquote p{font-family:var(--display);font-size:21px;font-weight:600;letter-spacing:-.018em;line-height:1.22;margin:0 0 12px}
+  .fquote .who{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin:0}
+  .fnum{font-family:var(--display);font-size:44px;font-weight:700;letter-spacing:-.035em;line-height:1;color:var(--yellow);margin:0 0 12px}
+  .sticker{position:absolute;left:22px;right:22px;bottom:64px;background:var(--yellow);color:var(--black);border-radius:12px;padding:13px;text-align:center;font-size:13.5px;font-weight:700;letter-spacing:.02em;z-index:5}
+  .igfoot{position:absolute;bottom:14px;left:14px;right:14px;display:flex;align-items:center;gap:9px;z-index:5}
+  .igfoot .box{flex:1;border:1px solid rgba(255,255,255,.4);border-radius:9999px;padding:8px 14px;font-size:11.5px;color:rgba(255,255,255,.6)}
+  .frame.f1 .igfoot .box{border-color:rgba(0,0,0,.28);color:rgba(0,0,0,.5)}
+  .igfoot .ic{font-size:14px;opacity:.75}
+  .flabel{text-align:center;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7C7770;margin:14px 0 0}
+  .socialnote{max-width:640px;margin:40px auto 0;color:#8A867C;font-size:14px;line-height:1.65;text-align:center}
+  @media (max-width:860px){ .socialview{padding:28px 14px 60px} .frames{gap:16px} }
 </style>
 </head>
 <body>
@@ -191,6 +234,7 @@
 <div class="tabs">
   <button class="tab on" data-v="page">Landing page</button>
   <button class="tab" data-v="email">The email</button>
+  <button class="tab" data-v="social">Social</button>
 </div>
 
 <div id="view-page">
@@ -464,31 +508,33 @@
 
       <div class="mailmeta">
         <div class="mrow"><span class="lbl">From</span><span class="val">EarnIn &lt;hello@earnin.com&gt;</span></div>
-        <div class="mrow"><span class="lbl">Subject</span><span class="val subj">If this month is one of the hard ones</span></div>
-        <div class="mrow"><span class="lbl">Preview</span><span class="val pre">We set money aside for exactly this. Nothing to pay back.</span></div>
+        <div class="mrow"><span class="lbl">Subject</span><span class="val subj">If you need a little help right now</span></div>
+        <div class="mrow"><span class="lbl">Preview</span><span class="val pre">No catch, and nothing to pay back.</span></div>
       </div>
 
       <div class="mail">
         <div class="brand"><span class="logo">earn<span class="in">in</span></span></div>
 
-        <p>Hi [First name],</p>
+        <p class="opener">Some months just do not work out.</p>
 
-        <p>Every month we put money into a fund for people going through a hard stretch. Not a product, not a feature. A fund.</p>
+        <p>The car. The deposit. The bill nobody saw coming. You do everything right and the month still comes up short.</p>
 
-        <p>It is a grant, so there is nothing to pay back. No interest, no fees, no tip. Two nonprofits run it, not us, and we never see your application.</p>
+        <p>If that is where you are right now, we have set money aside for it.</p>
 
-        <div class="amtline">
+        <p>We are working with Standard Giving to get funds directly to people going through real hardship. They run the whole thing. You apply with them, they review it, and they get the money to you.</p>
+
+        <div class="stat">
           <b>$250 to $2,500</b>
-          Most grants land between $500 and $1,000. The application takes about two minutes and there is nothing to upload.
+          <span>Given directly. Nothing to pay back, no interest, no fees, no tip.</span>
         </div>
 
-        <p>You do not need to use EarnIn to apply, and having an account does not help your odds. If you are turned down, nothing changes about your account either.</p>
+        <p>If you think that might be you, apply. That is the entire ask. It takes two minutes, there is nothing to upload, and you do not need to use EarnIn to be considered.</p>
 
         <div class="ctawrap">
-          <a href="#" class="btn btn-blk btn-lg">Apply now <span class="arw">&rarr;</span></a>
+          <a href="#" class="btn btn-blk btn-lg">Apply with Standard Giving <span class="arw">&rarr;</span></a>
         </div>
 
-        <p>If this is not your month, there is nothing to do. And if you know someone this would help, send it to them.</p>
+        <p class="ps">If this is not your month, there is nothing to do here. And if someone you know needs it more than you do, send this to them.</p>
 
         <p class="sign">The team at EarnIn</p>
 
@@ -500,14 +546,72 @@
   </div>
 </div>
 
+<div id="view-social" hidden>
+  <div class="socialview">
+    <div class="socialwrap">
+      <p class="socialhint">Three-frame story sequence. Frame two is where a creator drops in, telling it in their own voice rather than the brand's.</p>
+
+      <div class="frames">
+
+        <div>
+          <div class="frame f1">
+            <div class="bars"><i class="on"></i><i></i><i></i></div>
+            <div class="ighead"><span class="ava">earn<br>in</span><span>earnin</span><span class="t">2h</span></div>
+            <div class="fbody">
+              <p class="fbig">Some months just don't work out.</p>
+              <p class="fsub">The car. The deposit. The bill nobody saw coming.</p>
+            </div>
+            <div class="igfoot"><div class="box">Send message</div><span class="ic">&#9825;</span><span class="ic">&#10148;</span></div>
+          </div>
+          <p class="flabel">Frame 1 &nbsp;·&nbsp; Hook</p>
+        </div>
+
+        <div>
+          <div class="frame f2">
+            <div class="fphoto"><span>CREATOR PHOTO<br>OR SELFIE VIDEO</span></div>
+            <div class="bars"><i></i><i class="on"></i><i></i></div>
+            <div class="ighead"><span class="ava">earn<br>in</span><span>earnin</span><span class="t">2h</span></div>
+            <div class="fquote">
+              <p>"They set aside real money and they are not asking for anything back. I checked."</p>
+              <p class="who">@creator</p>
+            </div>
+            <div class="igfoot"><div class="box">Send message</div><span class="ic">&#9825;</span><span class="ic">&#10148;</span></div>
+          </div>
+          <p class="flabel">Frame 2 &nbsp;·&nbsp; Creator</p>
+        </div>
+
+        <div>
+          <div class="frame f3">
+            <div class="bars"><i></i><i></i><i class="on"></i></div>
+            <div class="ighead"><span class="ava">earn<br>in</span><span>earnin</span><span class="t">2h</span></div>
+            <div class="fbody">
+              <p class="fnum">$250 to $2,500</p>
+              <p class="fbig">If that's you, apply.</p>
+              <p class="fsub">A grant, not a loan. Two minutes. Run by Standard Giving, not by us.</p>
+            </div>
+            <div class="sticker">APPLY NOW</div>
+            <div class="igfoot"><div class="box">Send message</div><span class="ic">&#9825;</span><span class="ic">&#10148;</span></div>
+          </div>
+          <p class="flabel">Frame 3 &nbsp;·&nbsp; Link</p>
+        </div>
+
+      </div>
+
+      <p class="socialnote">A creator carries frame two better than the brand can. Coming from EarnIn it reads as marketing. Coming from someone with an audience who checked it out first, it reads as a tip. Same three frames work as a paid story unit, an organic post, or a creator whitelist.</p>
+    </div>
+  </div>
+</div>
+
 <script>
+  var VIEWS = ['page','email','social'];
   document.querySelectorAll('.tab').forEach(function(b){
     b.addEventListener('click', function(){
       document.querySelectorAll('.tab').forEach(function(x){ x.classList.remove('on'); });
       b.classList.add('on');
       var v = b.getAttribute('data-v');
-      document.getElementById('view-page').hidden  = (v !== 'page');
-      document.getElementById('view-email').hidden = (v !== 'email');
+      VIEWS.forEach(function(name){
+        document.getElementById('view-' + name).hidden = (name !== v);
+      });
       window.scrollTo(0,0);
     });
   });
